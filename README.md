@@ -40,10 +40,8 @@
         - 成果報告書
     - [成果物 | GitHub](https://github.com/virtualsecureplatform/kvsp)
 
----
 
 ## 未踏IT人材発掘・育成事業
 
----
 
 ## 未踏ターゲット事業
