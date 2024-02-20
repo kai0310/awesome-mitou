@@ -31,14 +31,16 @@
     - [プロジェクトページ | IPA](https://www.ipa.go.jp/archive/jinzai/mitou/it/2019/gaiyou_s-4.html)
     - [資料](https://github.com/virtualsecureplatform/MitouDocument)
         - 応募書類
+        - 二次面接プレゼンスライド
         - 成果報告書
+    - [成果物 | GitHub](https://github.com/virtualsecureplatform/kvsp)
 - プログラマブルな音楽制作ソフトウェアの開発
     - [プロジェクトページ | IPA](https://www.ipa.go.jp/archive/jinzai/mitou/it/2019/gaiyou_tk-1.html)
     - [資料](https://git.matsuuratomoya.com/tomoyanonymous/mitou2019_matsuura_application)
         - 応募書類
         - 二次面接プレゼンスライド
         - 成果報告書
-    - [成果物 | GitHub](https://github.com/virtualsecureplatform/kvsp)
+    - [成果物 | GitHub](https://github.com/mimium-org/mimium)
 
 
 ## 未踏IT人材発掘・育成事業
