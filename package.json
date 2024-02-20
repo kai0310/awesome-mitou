@@ -1,0 +1,11 @@
+{
+  "name": "awesome-mitou",
+  "version": "1.0.0",
+  "description": "有志にて公開された未踏事業の応募書類や成果報告書などをまとめているリポジトリです．",
+  "author": "Kai NABETA<develop.kai@gmail.com>",
+  "devDependencies": {
+    "textlint": "^14.0.3",
+    "textlint-filter-rule-allowlist": "^4.0.0",
+    "textlint-rule-preset-ja-technical-writing": "^10.0.1"
+  }
+}
