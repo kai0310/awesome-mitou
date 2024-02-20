@@ -20,7 +20,7 @@ jobs:
           cache: "npm"
       - name: Install Dependencies
         run: npm install
-      - run: npx textlint ./contents/**/*.md >> ./.textlint.log
+      - run: npx textlint ./*.md >> ./.textlint.log
       - if: ${{ failure() }}
         run: gh pr comment --body-file ./.textlint.log "${URL}"
         env:
