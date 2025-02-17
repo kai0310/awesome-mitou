@@ -30,7 +30,6 @@
     - [資料](https://github.com/ut-ashiki-engineering/mitou)
         - 提案書
 
-
 ### 2019年度
 
 - 準同型暗号によるバーチャルセキュアプラットフォームの開発
@@ -48,14 +47,10 @@
         - 成果報告書
     - [成果物 | GitHub](https://github.com/mimium-org/mimium)
 
-
-## 未踏IT人材発掘・育成事業
-
-
 ## 未踏ターゲット事業
-
 
 ## 未踏ジュニア (17歳以下)
 
-- 公式Webサイトにて有志の応募資料（提案書）の一覧を公開しています。
-    - https://jr.mitou.org/applications
+公式Webサイトにて有志の応募資料（提案書）の一覧を公開しています。
+
+- https://jr.mitou.org/applications
