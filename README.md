@@ -63,6 +63,12 @@
 
 ## 未踏ジュニア (17歳以下)
 
+公式Webサイトにて有志の応募資料（提案書）の一覧を公開しています。
+
+- https://jr.mitou.org/applications
+
+### 2023年度
+
 - A9N: HALを用いて移植容易性を実現するマイクロカーネル
     - [プロジェクトページ | 未踏ジュニア](https://jr.mitou.org/projects/2023/a9n)
     - [資料](https://github.com/horizon2038/mitou-documentation)
@@ -70,7 +76,4 @@
         - 二次面接プレゼンスライド
     - [成果物 | GitHub](https://github.com/horizon2038/A9N)
 
-公式Webサイトにて有志の応募資料（提案書）の一覧を公開しています。
-
-- https://jr.mitou.org/applications
 
