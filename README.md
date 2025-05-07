@@ -4,6 +4,18 @@
 
 ## 未踏IT人材発掘・育成事業
 
+### 2024年度
+
+- Capability-Based Microkernelによるセキュアなユーザレベルメモリ管理システム
+    - [プロジェクトページ | IPA](https://www.ipa.go.jp/jinzai/mitou/it/2024/gaiyou-sg-2.html)
+    - [資料](https://github.com/horizon2038/mitou-documentation)
+        - 提案書
+        - 二次面接プレゼンスライド
+        - 成果報告書
+    - [成果物 | GitHub](https://github.com/horizon2038/A9N)
+    - [成果物 | GitHub](https://github.com/horizon2038/Nun)
+    - [成果物 | GitHub](https://github.com/horizon2038/A9NLoader)
+
 ### 2023年度
 
 - Pythonにトランスパイル可能な静的型付けプログラミング言語の開発
@@ -54,3 +66,14 @@
 公式Webサイトにて有志の応募資料（提案書）の一覧を公開しています。
 
 - https://jr.mitou.org/applications
+
+### 2023年度
+
+- A9N: HALを用いて移植容易性を実現するマイクロカーネル
+    - [プロジェクトページ | 未踏ジュニア](https://jr.mitou.org/projects/2023/a9n)
+    - [資料](https://github.com/horizon2038/mitou-documentation)
+        - 提案書
+        - 二次面接プレゼンスライド
+    - [成果物 | GitHub](https://github.com/horizon2038/A9N)
+
+
