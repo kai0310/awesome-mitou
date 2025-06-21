@@ -6,6 +6,14 @@
 
 ### 2024年度
 
+- ニューラル言語モデルによる個人最適な日本語入力システムの開発
+    - [プロジェクトページ | IPA](https://www.ipa.go.jp/jinzai/mitou/it/2024/gaiyou-ok-3.html)
+    - [資料](https://github.com/nyanko3141592/mitou_docs)
+        - 提案書
+        - 二次面接プレゼンスライド
+        - 成果報告書
+    - [メディア掲載 | さくらのナレッジ](https://knowledge.sakura.ad.jp/42901/)
+
 - Capability-Based Microkernelによるセキュアなユーザレベルメモリ管理システム
     - [プロジェクトページ | IPA](https://www.ipa.go.jp/jinzai/mitou/it/2024/gaiyou-sg-2.html)
     - [資料](https://github.com/horizon2038/mitou-documentation)
