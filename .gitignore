@@ -1,1 +1,14 @@
 node_modules
+
+# テスト/カバレッジ
+coverage/
+
+# エディタ
+.idea/
+.vscode/
+
+# スクリプト/ワークフローの一時生成物
+candidates.json
+body.md
+issue.md
+.textlint.log

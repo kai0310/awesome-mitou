@@ -1,0 +1,56 @@
+name: Check dead links
+
+on:
+  schedule:
+    - cron: "0 1 * * 1" # 毎週月曜 01:00 UTC
+  workflow_dispatch: # 手動実行
+
+permissions:
+  contents: read
+  issues: write
+
+jobs:
+  check-links:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Install Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - name: Check links
+        id: check
+        shell: bash
+        run: |
+          set +e
+          node scripts/check-links.mjs README.md > body.md
+          echo "broken=$?" >> "$GITHUB_OUTPUT"
+      - name: Upsert dead-link issue
+        shell: bash
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          TITLE: "リンク切れ (自動検出)"
+        run: |
+          set -euo pipefail
+          num=$(gh issue list --state open --json number,title \
+                  --jq ".[] | select(.title==\"${TITLE}\") | .number" | head -n1)
+          if [ "${{ steps.check.outputs.broken }}" = "0" ]; then
+            echo "リンク切れなし。"
+            if [ -n "${num}" ]; then
+              gh issue comment "${num}" --body "最新のチェックでリンク切れは検出されませんでした。解消済みであれば close してください。"
+            fi
+            exit 0
+          fi
+          {
+            echo "> このIssueは \`scripts/check-links.mjs\` により自動生成・更新されます。"
+            echo ""
+            cat body.md
+          } > issue.md
+          if [ -n "${num}" ]; then
+            gh issue edit "${num}" --body-file issue.md
+            echo "既存Issue #${num} を更新しました。"
+          else
+            gh issue create --title "${TITLE}" --body-file issue.md
+            echo "新規Issueを作成しました。"
+          fi

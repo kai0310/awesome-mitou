@@ -1,0 +1,55 @@
+name: Blocklist on candidate PR close
+
+# 自動検出の候補 PR(ブランチ discover/*)がマージされずに close されたら、
+# 誤検知とみなして対象リポジトリを blockedRepos に追加する。
+
+on:
+  pull_request:
+    types: [closed]
+
+permissions:
+  contents: write
+
+jobs:
+  blocklist:
+    # マージされておらず、かつ自動検出ブランチの場合のみ実行
+    if: >-
+      github.event.pull_request.merged == false &&
+      startsWith(github.event.pull_request.head.ref, 'discover/')
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout main
+        uses: actions/checkout@v4
+        with:
+          ref: main
+      - name: Install Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - name: Extract candidate and update blocklist
+        shell: bash
+        env:
+          PR_BODY: ${{ github.event.pull_request.body }}
+        run: |
+          set -euo pipefail
+          # PR 本文のマーカー <!-- mitou-candidate: owner/repo --> から対象を取得
+          repo=$(printf '%s' "$PR_BODY" | grep -oiE 'mitou-candidate: *[A-Za-z0-9_.-]+/[A-Za-z0-9_.-]+' | head -n1 | sed -E 's/.*: *//')
+          if [ -z "${repo}" ]; then
+            echo "候補リポジトリを特定できませんでした。処理を終了します。"
+            exit 0
+          fi
+          echo "誤検知として blockedRepos に追加: ${repo}"
+          node scripts/lists.mjs add blockedRepos "${repo}"
+      - name: Commit blocklist update
+        shell: bash
+        run: |
+          set -euo pipefail
+          if git diff --quiet -- scripts/mitou-lists.json; then
+            echo "変更なし。コミットしません。"
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add scripts/mitou-lists.json
+          git commit -m "chore: 誤検知リポジトリをブラックリストに追加"
+          git push
