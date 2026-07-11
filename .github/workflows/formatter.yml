@@ -5,23 +5,31 @@ on:
   pull_request:
     types: [ opened, synchronize, reopened ]
 
+permissions:
+  contents: read
+  pull-requests: write
+
 jobs:
   check-pull-request:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
         with:
           ref: ${{ github.head_ref }}
       - name: Install Node.js
-        uses: actions/setup-node@v2
+        uses: actions/setup-node@v4
         with:
-          node-version: 18
-          cache: "npm"
+          node-version: 20
       - name: Install Dependencies
-        run: npm install
-      - run: npx textlint ./*.md >> ./.textlint.log
-      - if: ${{ failure() }}
+        run: npm ci
+      - name: Run textlint
+        shell: bash
+        run: |
+          set -o pipefail
+          npx textlint ./*.md | tee ./.textlint.log
+      - name: Comment lint result on PR
+        if: ${{ failure() && github.event_name == 'pull_request' }}
         run: gh pr comment --body-file ./.textlint.log "${URL}"
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
