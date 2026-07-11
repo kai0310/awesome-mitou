@@ -1,0 +1,9 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`renderCandidatesMarkdown > 候補一覧のスナップショット 1`] = `
+"# 未踏関連リポジトリ 候補 (1件)
+
+| Score | 確度 | ★ | リポジトリ | 区分/年度 | 説明 | 判定理由 |
+| ---: | :---: | ---: | --- | --- | --- | --- |
+| 11 | 高 | 42 | [example/mitou-docs](https://github.com/example/mitou-docs) | it/2024 | 未踏IT 2024年度 | 「未踏」を含む, topic: mitou, 公式ページ(it 2024, 実在確認済), ⚠ fork（原本が候補になる） |"
+`;

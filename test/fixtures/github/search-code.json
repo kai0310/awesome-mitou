@@ -1,0 +1,11 @@
+{
+  "total_count": 1,
+  "incomplete_results": false,
+  "items": [
+    {
+      "name": "README.md",
+      "path": "README.md",
+      "repository": { "full_name": "example-user/code-hit-repo" }
+    }
+  ]
+}

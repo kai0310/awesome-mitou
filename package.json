@@ -3,9 +3,32 @@
   "version": "1.0.0",
   "description": "有志にて公開された未踏事業の応募書類や成果報告書などをまとめているリポジトリです．",
   "author": "Kai NABETA<develop.kai@gmail.com>",
+  "type": "module",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "mitou": "tsx src/cli/main.ts",
+    "discover": "tsx src/cli/main.ts discover",
+    "check-links": "node scripts/check-links.mjs README.md",
+    "typecheck": "tsc --noEmit",
+    "lint": "biome check .",
+    "lint:fix": "biome check --write .",
+    "test": "vitest run",
+    "test:coverage": "vitest run --coverage"
+  },
+  "dependencies": {
+    "zod": "^3.24.1"
+  },
   "devDependencies": {
+    "@biomejs/biome": "^1.9.4",
+    "@types/node": "^22.20.1",
+    "@vitest/coverage-v8": "^2.1.8",
     "textlint": "^14.0.3",
     "textlint-filter-rule-allowlist": "^4.0.0",
-    "textlint-rule-preset-ja-technical-writing": "^10.0.1"
+    "textlint-rule-preset-ja-technical-writing": "^10.0.1",
+    "tsx": "^4.19.2",
+    "typescript": "^5.7.2",
+    "vitest": "^2.1.8"
   }
 }

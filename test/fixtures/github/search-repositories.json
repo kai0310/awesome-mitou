@@ -1,0 +1,25 @@
+{
+  "total_count": 2,
+  "incomplete_results": false,
+  "items": [
+    {
+      "full_name": "example-user/mitou-docs",
+      "html_url": "https://github.com/example-user/mitou-docs",
+      "description": "未踏IT 2024 提案書と成果報告書",
+      "topics": ["mitou", "ipa"],
+      "stargazers_count": 42,
+      "fork": false,
+      "archived": false,
+      "pushed_at": "2024-10-01T00:00:00Z"
+    },
+    {
+      "full_name": "example-user/plain-repo",
+      "html_url": "https://github.com/example-user/plain-repo",
+      "description": null,
+      "stargazers_count": 3,
+      "fork": false,
+      "archived": false,
+      "pushed_at": "2023-01-01T00:00:00Z"
+    }
+  ]
+}
