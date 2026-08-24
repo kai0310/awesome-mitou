@@ -1,5 +1,7 @@
 {
   "blockedOwners": [],
   "blockedRepos": [],
-  "acceptedRepos": []
+  "acceptedRepos": [
+    "yasslab/yasslab.jp"
+  ]
 }
