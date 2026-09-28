@@ -1,5 +1,7 @@
 {
   "blockedOwners": [],
   "blockedRepos": [],
-  "acceptedRepos": []
+  "acceptedRepos": [
+    "mitou/jr.mitou.org"
+  ]
 }
