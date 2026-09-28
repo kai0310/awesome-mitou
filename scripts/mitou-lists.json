@@ -1,5 +1,7 @@
 {
   "blockedOwners": [],
   "blockedRepos": [],
-  "acceptedRepos": []
+  "acceptedRepos": [
+    "daigo38/mitou-dashboard"
+  ]
 }
