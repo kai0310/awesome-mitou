@@ -1,5 +1,7 @@
 {
   "blockedOwners": [],
   "blockedRepos": [],
-  "acceptedRepos": []
+  "acceptedRepos": [
+    "Jun-robot/3DPrintedMotor"
+  ]
 }
