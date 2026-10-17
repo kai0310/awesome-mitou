@@ -38,7 +38,7 @@ jobs:
           if [ "${{ steps.check.outputs.broken }}" = "0" ]; then
             echo "リンク切れなし。"
             if [ -n "${num}" ]; then
-              gh issue comment "${num}" --body "最新のチェックでリンク切れは検出されませんでした。解消済みであれば close してください。"
+              gh issue close "${num}" --comment "最新のチェックでリンク切れは検出されませんでした。自動で close します。"
             fi
             exit 0
           fi
