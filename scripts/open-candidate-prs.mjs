@@ -72,14 +72,18 @@ function main() {
     /* ラベルは無くても続行 */
   }
 
+  // 失敗した試行も上限に数え、PR を作れない状況でブランチだけが量産されるのを防ぐ
+  let attempted = 0;
   let created = 0;
+  let failed = 0;
   for (const c of candidates) {
-    if (created >= MAX_PRS) break;
+    if (attempted >= MAX_PRS) break;
     const branch = branchFor(c.full_name);
     if (openPrExists(branch)) {
       process.stdout.write(`skip(既存PRあり): ${c.full_name}\n`);
       continue;
     }
+    attempted++;
     try {
       git(['checkout', '-B', branch, 'origin/main']);
       const added = run('node', ['scripts/lists.mjs', 'add', 'acceptedRepos', c.full_name]);
@@ -97,10 +101,13 @@ function main() {
       created++;
       process.stdout.write(`PR作成: ${c.full_name} (${added.trim()})\n`);
     } catch (err) {
+      failed++;
       process.stderr.write(`PR作成失敗 ${c.full_name}: ${(err.stderr || err.message || '').toString().trim()}\n`);
     }
   }
-  process.stdout.write(`作成した PR: ${created} 件\n`);
+  process.stdout.write(`作成した PR: ${created} 件 / 失敗: ${failed} 件\n`);
+  // 失敗があればジョブを失敗させて気づけるようにする
+  if (failed > 0) process.exitCode = 1;
 }
 
 main();
