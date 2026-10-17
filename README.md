@@ -5,15 +5,24 @@
 ## 目次
 
 - [未踏IT人材発掘・育成事業](#未踏it人材発掘育成事業)
+  - [2025年度](#2025年度)
   - [2024年度](#2024年度)
   - [2023年度](#2023年度)
   - [2019年度](#2019年度)
 - [未踏ターゲット事業](#未踏ターゲット事業)
 - [未踏ジュニア (17歳以下)](#未踏ジュニア-17歳以下)
+  - [2026年度](#2026年度)
   - [2023年度](#2023年度-1)
 - [コントリビュート](#コントリビュート)
 
 ## 未踏IT人材発掘・育成事業
+
+### 2025年度
+
+#### 自己表現のためのモジュール型ソーシャルロボットの開発基盤の構築
+
+- [プロジェクトページ | IPA](https://www.ipa.go.jp/jinzai/mitou/it/2025/gaiyou-in-2.html)
+- [資料](https://github.com/sotaro-ha/2025-mitou-doc) — 提案書
 
 ### 2024年度
 
@@ -21,6 +30,7 @@
 
 - [プロジェクトページ | IPA](https://www.ipa.go.jp/jinzai/mitou/it/2024/gaiyou-ok-3.html)
 - [資料](https://github.com/nyanko3141592/mitou_docs) — 提案書 / 二次面接プレゼンスライド / 成果報告書
+- [成果物 | GitHub](https://github.com/azooKey/azooKey-Desktop)
 - [メディア掲載 | さくらのナレッジ](https://knowledge.sakura.ad.jp/42901/)
 
 #### Capability-Based Microkernelによるセキュアなユーザレベルメモリ管理システム
@@ -60,7 +70,7 @@
 
 - [プロジェクトページ | IPA](https://www.ipa.go.jp/archive/jinzai/mitou/it/2019/gaiyou_tk-1.html)
 - [資料](https://git.matsuuratomoya.com/tomoyanonymous/mitou2019_matsuura_application) — 提案書 / 二次面接プレゼンスライド / 成果報告書
-- [成果物 | GitHub](https://github.com/mimium-org/mimium)
+- 成果物: [mimium](https://github.com/mimium-org/mimium) / [mimium-rs](https://github.com/mimium-org/mimium-rs)（Rust による再実装）
 
 ## 未踏ターゲット事業
 
@@ -72,7 +82,19 @@ _準備中_
 
 - https://jr.mitou.org/applications
 
+### 2026年度
+
+#### Unframe - MRを使ったプレゼンテーションアプリ
+
+- [プロジェクトページ | 未踏ジュニア](https://jr.mitou.org/projects/2026/unframe)
+- [資料](https://github.com/unframe-dev/mitou-slide) — 中間合宿スライド
+
 ### 2023年度
+
+#### Hopefully Automatic Train Operation: 没入感を高める!? Nゲージ列車 全自動走行システム
+
+- [プロジェクトページ | 未踏ジュニア](https://jr.mitou.org/projects/2023/hato)
+- [資料・成果物 | GitHub](https://github.com/nyiyui/hato) — 成果報告会スライド・発表動画
 
 #### A9N: HALを用いて移植容易性を実現するマイクロカーネル
 

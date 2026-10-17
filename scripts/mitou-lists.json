@@ -1,5 +1,54 @@
 {
-  "blockedOwners": [],
-  "blockedRepos": [],
-  "acceptedRepos": []
+  "blockedOwners": [
+    "hakurei-mitou",
+    "yr32infra"
+  ],
+  "blockedRepos": [
+    "coderdojo-japan/coderdojo.jp",
+    "digitaldemocracy2030/broad-listening-book",
+    "gorira-tatsu/magic-spreadsheet-u18",
+    "horizon2038/horizon2k38.com",
+    "megane9988/yasslab.jp",
+    "nishio/etude-github-actions",
+    "nishio/mitoujr-minecraft-web",
+    "pepabo/rand.pepabo.com",
+    "rickshinmi/mitoujunior_asobiba",
+    "Soynyuu/mitou-jr-2025",
+    "syu3/MitouJr-Project",
+    "yasslab/yasslab.jp"
+  ],
+  "acceptedRepos": [
+    "Alignof/hikami",
+    "aviatesk/obsidian-sonar",
+    "azooKey/azooKey-Desktop",
+    "cabinpkg/cabin",
+    "daigo38/mitou-dashboard",
+    "detexploit/DetExploit",
+    "elevenx-jp/mitou",
+    "gfngfn/SATySFi",
+    "horizon2038/mitou-report",
+    "Jun-robot/3DPrintedMotor",
+    "k-mrm/Pilevisor",
+    "kagawa0710/mitou-2025",
+    "makotonakai/Mitou-2019-Quantum-GAN",
+    "mimium-org/mimium-rs",
+    "mitou/jr.mitou.org",
+    "mitou/mattermost.jr.mitou.org",
+    "mitou/meikan",
+    "mitou/mitoujr",
+    "mitou/sig-mitou",
+    "mitou/startup_financing_report",
+    "mitou/wufoo2mattermost",
+    "nishio/mitou_meikan",
+    "nyiyui/hato",
+    "onhrs/mitou-tg-quantum-bandit",
+    "sotaro-ha/2025-mitou-doc",
+    "susanow/susanow",
+    "tana/Mondeto",
+    "unframe-dev/mitou-slide",
+    "wwlapaki310/mitou-advanced-2026-shipguard",
+    "yasulab/ipa2warp",
+    "yasulab/llm-linter",
+    "yuya-isaka/HPU"
+  ]
 }
