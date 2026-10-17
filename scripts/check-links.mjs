@@ -7,6 +7,7 @@
 //   node scripts/check-links.mjs --json          # JSON 出力(Action 用)
 //
 // 判定: HTTP 4xx/5xx、接続エラー、タイムアウトを「切れ(broken)」とみなす。
+// 5xx・接続エラー・タイムアウトは再試行し、それでも失敗した場合のみ報告する。
 // 一部サイトは Bot に 403 を返すため、ステータスコードを併記して人が判断できるようにする。
 
 import { readFileSync } from 'node:fs';
@@ -18,6 +19,9 @@ const DEFAULT_FILE = join(__dirname, '..', 'README.md');
 
 const TIMEOUT_MS = 15000;
 const CONCURRENCY = 8;
+// 5xx・接続エラー・タイムアウトは一時的な障害のことが多いため再試行する
+const RETRIES = 2;
+const RETRY_DELAY_MS = 5000;
 const UA = 'awesome-mitou-link-checker (+https://github.com/kai0310/awesome-mitou)';
 
 function parseArgs(argv) {
@@ -51,7 +55,7 @@ function extractUrls(files) {
   return urls;
 }
 
-async function checkUrl(url) {
+async function checkUrlOnce(url) {
   const controller = new AbortController();
   const timer = setTimeout(() => controller.abort(), TIMEOUT_MS);
   try {
@@ -68,6 +72,17 @@ async function checkUrl(url) {
   } finally {
     clearTimeout(timer);
   }
+}
+
+const isTransient = (r) => r.status === 0 || r.status >= 500;
+
+async function checkUrl(url) {
+  let result = await checkUrlOnce(url);
+  for (let i = 0; i < RETRIES && isTransient(result); i++) {
+    await new Promise((resolve) => setTimeout(resolve, RETRY_DELAY_MS * (i + 1)));
+    result = await checkUrlOnce(url);
+  }
+  return result;
 }
 
 // 簡易並列プール
