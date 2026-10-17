@@ -6,7 +6,13 @@
     "useIgnoreFile": true
   },
   "files": {
-    "ignore": ["node_modules", "coverage", "scripts/**/*.mjs", "candidates.json"]
+    "ignore": [
+      "node_modules",
+      "coverage",
+      "scripts/**/*.mjs",
+      "scripts/mitou-lists.json",
+      "candidates.json"
+    ]
   },
   "organizeImports": {
     "enabled": true
