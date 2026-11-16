@@ -1,5 +1,7 @@
 {
   "blockedOwners": [],
   "blockedRepos": [],
-  "acceptedRepos": []
+  "acceptedRepos": [
+    "nishio/mitou_meikan"
+  ]
 }
